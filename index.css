@@ -1,0 +1,258 @@
+
+/* ------------------- */
+/* Custom fonts   */
+/* ------------------- */
+
+@font-face {
+    font-family: 'Erbos Draco 1st NBP Regular';
+    src: url('fonts/ErbosDraco1StNbpRegular-99V5.ttf') format('truetype');
+  }
+
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+
+body {
+    margin: 0;
+}
+
+
+:root {
+    /* colors */
+    /* --clr-dark: 0, 0, 7%;  */
+    --clr-dark: #131313;
+    /* #131313 */
+    --clr-light: 47, 85%, 55%;
+    /* #eec22a */
+    --clr-accent: 360, 73%, 51%;
+    /* #dd292a */
+    --clr-white: 180, 1%, 86%;
+    /* #dbdcdc */
+   
+    
+    /* font-sizes */
+    --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1rem;
+    --fs-500: 1rem;
+    --fs-400: 0.9375rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+
+    /* font-families */
+    --ff-sans-normal: "Anton", sans-serif;
+    --ff-sans-digital: "Erbos Draco 1st NBP Regular", sans-serif;
+}
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+/* set up the body */
+
+body {
+    /* font-family: var(--ff-sans-normal); */
+    font-size: var(--fs-400);
+    /* color: hsl( var(--clr-dark) ); 
+    background-color: hsl( var(--clr-white) ); */
+    line-height: 1.5;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.grid--board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: start;
+    text-align: center;
+}
+
+.grid--score {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-self: center;
+}
+
+.col-span {
+    grid-column: 1 / span 3; /* Spans from column 1 to column 3 */
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+}
+
+.flow--space-small {
+    --flow-space: .75rem;
+}
+
+.wrapper {
+    width: min(100% - 3rem, 65ch);
+    margin-inline: auto; 
+  }
+
+.text-center {
+    text-align: center;
+}
+
+.justify {
+    justify-content: center;
+}
+
+.align {
+    align-items: center;
+}
+
+
+/* board */
+
+
+#board {
+    width: 600px;
+    height: 385px;
+    background-color:rgb(26, 25, 25);
+    padding-inline: 1rem;
+}
+
+
+#points {
+    font-family: var(--ff-sans-digital);
+}
+
+.increment-btn {
+    background-color: hsl( var(--clr-dark) );
+    padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(235, 203, 45);
+  transition: box-shadow 0.3s ease;
+}
+
+.increment-btn:hover {
+    box-shadow: 0 4px 9px rgb(255, 254, 252);
+}
+
+.main-btn  {
+    background-color: hsl( var(--clr-dark) );
+    padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgb(251, 251, 249);
+  transition: box-shadow 0.3s ease;
+  font-size: var(--fs-300);
+}
+
+.main-btn:hover {
+    box-shadow: 0 4px 9px rgba(235, 203, 45);
+}
+
+.increment-btn + .increment-btn {
+    margin-left: .5rem;
+}
+
+/* colors */
+
+.bg-dark { background-color: hsl( var(--clr-dark) );}
+.bg-accent { background-color: hsl( var(--clr-accent) );}
+.bg-white { background-color: hsl( var(--clr-white) );}
+
+.text-dark { color: hsl( var(--clr-dark) );}
+.text-accent { color: hsl( var(--clr-accent) );}
+.text-white { color: hsl( var(--clr-white) );}
+.text-light { color: hsl( var(--clr-light) );}
+
+
+/* typography */
+
+.ff-sans-normal { font-family: var(--ff-sans-normal); } 
+.ff-sans-digital { font-family: var(--ff-sans-digital); } 
+
+.letter-spacing-1 { letter-spacing: 4.75px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
+
+.uppercase { text-transform: uppercase; }
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
+}
+
+.numbered-title {
+    font-family: var(--ff-sans-cond);
+    font-size: var(--fs-500);
+    text-transform: uppercase;
+    letter-spacing: 4.72px; 
+}
+

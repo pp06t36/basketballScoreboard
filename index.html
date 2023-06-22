@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- custom style -->
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <section>
+        <div class="container">  
+            <div class="counterImg">
+                <h1>Cookies eaten:</h1>
+                <h2 id="count-el">0</h2>
+                <button id="increment-btn" onclick="increment()">Amount</button>
+                <h2 id="save-el">0</h2>
+                <button id="save-btn" onclick="save()">Save</button>
+            </div>
+    </section> -->
+
+    <body>
+        <div class="wrapper">
+            <div id="board" class="bg-dark grid grid--board flow">
+                <div id="scores" class="grid-item grid--score col-span fs-700">
+                    <h2 id="homeGame-el" class="text-light">00</h2>
+                    <h2 class="text-white">GAMES</h2>
+                    <h2 id="visitorGame-el" class="text-light">00</h2>
+                </div>
+                <div id="home" class="grid-item flow">
+                    <h3 id="name--tigers" class="ff-sans-normal fs-800 text-white uppercase">Tigers</h3>
+                    <h2 id="homeCount-el" class="ff-sans-digital text-light fs-800">00</h2>
+                    <div id="poins" class="ff-sans-digital text-accent text-center flow">
+                        <button id="homeIncrementOne-btn" class="increment-btn text-accent" onclick="increment()">+1</button>
+                        <button id="homeIncrementTwo-btn" class="increment-btn text-accent" onclick="incrementTwo()">+2</button>
+                        <button id="homeIncrementThree-btn" class="increment-btn text-accent" onclick="incrementThree()">+3</button>
+                    </div>
+                </div>
+            
+                <div id="timer" class="grid-item text-accent fs-700 ff-sans-digital flex column">
+                    <h2 id="timerMin-el">00:00</h2>
+                    <button id="gameStart-btn" class="main-btn text-white uppercase" onclick="gameStart()">Let's Play</button>
+                    
+                    <button id="saveGame-btn" class="main-btn text-white uppercase" onclick="saveGame()">Save Game</button>  
+                   
+                    <button id="Resetgame-btn" class="main-btn text-white uppercase" onclick="resetGame()">Game reset</button>
+                </div>
+
+                <div id="guest" class="grid-item flow">
+                    <h3 id="name--visitor" class="ff-sans-normal fs-800 text-white uppercase">Visitors</h3>
+                    <h2 id="guestCount-el" class="text-light fs-800 ff-sans-digital">00</h2>
+                    <div id="poins" class="ff-sans-digital text-accent text-center flow">
+                        <button id="guestIncrementOne-btn" class="increment-btn text-accent" onclick="guestIncrement()">+1</button>
+                        <button id="guestIncrementTwo-btn" class="increment-btn text-accent" onclick="guestIncrementTwo()">+2</button>
+                        <button id="guestIncrementThree-btn" class="increment-btn text-accent" onclick="guestIncrementThree()">+3</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
